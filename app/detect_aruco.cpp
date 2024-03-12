@@ -46,19 +46,7 @@ int main(int argc, char **argv)
     aruco_detector->set_target_id(target_id);
 
     // initiate threads =======================================================
-    aruco_detector->run_for_data_collection_as_thread();
-
-    // main thread task =======================================================
-    while (true)
-    {
-        if (cv::waitKey(1) == 27)
-        {
-            break;
-        }
-    }
-    
-    // join threads ===========================================================
-    aruco_detector->close();
+    aruco_detector->run();
 
     return 0;
 }

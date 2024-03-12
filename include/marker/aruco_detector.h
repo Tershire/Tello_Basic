@@ -63,6 +63,8 @@ public:
     void set_input_mode(const Input_Mode& input_mode) {input_mode_ = input_mode;}
 
     // member methods /////////////////////////////////////////////////////////
+    bool run();
+    bool run_as_thread();
     bool run_for_data_collection();
     bool run_for_data_collection_as_thread();
     void close();

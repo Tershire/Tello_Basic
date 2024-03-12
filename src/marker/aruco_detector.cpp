@@ -81,6 +81,127 @@ ArUco_Detector::ArUco_Detector(const int& target_id,
 }
 
 // member methods /////////////////////////////////////////////////////////////
+bool ArUco_Detector::run()
+{
+    // image //////////////////////////////////////////////////////////////////
+    cv::Mat image, image_out;
+
+    // port ///////////////////////////////////////////////////////////////////
+    cv::VideoCapture cap;
+    switch (input_mode_)
+    {
+        case TELLO:
+            cap = cv::VideoCapture(Config::read<std::string>("tello_video_stream"), cv::CAP_FFMPEG);
+            break;
+
+        case USB:
+            cap = cv::VideoCapture(Config::read<int>("USB_camera_ID"));
+            break;
+
+        case VIDEO:
+            cap = cv::VideoCapture(Config::read<std::string>("video_file_path"));
+            break; 
+    }
+    std::cout << "[ArUco Detector] got cap." << std::endl;
+
+    // check capture
+    if (!cap.isOpened()) 
+    {
+        std::cerr << "ERROR: capturer is not open\n";
+        return -1;
+    }
+
+    // get FPS
+    double fps = cap.get(cv::CAP_PROP_FPS);
+    std::cout << "FPS: " << fps << std::endl;
+
+    // setting ////////////////////////////////////////////////////////////////
+    // ArUco ==================================================================
+    int target_index = false;
+    
+    // pose estimation ========================================================
+    cv::Vec3d rvec, tvec; // rotation, translation vectors
+    cv::Matx33d rmat;
+    
+    ///////////////////////////////////////////////////////////////////////////
+    for (;;)
+    {
+        cap >> image;
+
+        // check frame
+        if (image.empty()) 
+        {
+            std::cerr << "ERROR: blank frame\n";
+            break;
+        }
+        
+        // pre-processing /////////////////////////////////////////////////////
+        // convert to grayscale
+        cv::cvtColor(image, image, cv::COLOR_BGR2GRAY);
+ 
+        // --------------------------------------------------------------------
+        // convert to BGR for output
+        cv::cvtColor(image, image_out, cv::COLOR_GRAY2BGR);
+        // --------------------------------------------------------------------
+
+        // main ///////////////////////////////////////////////////////////////
+        // detect =============================================================      
+        std::vector<int> ids;
+        std::vector<std::vector<cv::Point2f>> p2Dss_pixel, rejected_p2Dss_pixel;
+        detector_->detectMarkers(image, p2Dss_pixel, ids, rejected_p2Dss_pixel);
+
+        target_index = find_target_index(ids);
+        target_found_ = target_index >= 0;
+
+        // estimate pose ======================================================
+        if (target_found_)
+        {   
+            std::vector<cv::Point2f> p2Ds_pixel = p2Dss_pixel.at(target_index);
+
+            // solve initial pose guess with RANSAC
+            cv::solvePnPRansac(p3Ds_target_, p2Ds_pixel, 
+                cameraMatrix_, distCoeffs_, rvec, tvec, 
+                false, cv::SOLVEPNP_IPPE_SQUARE);
+        }
+
+        // output /////////////////////////////////////////////////////////////
+        // draw ---------------------------------------------------------------
+        if (!ids.empty())
+        {
+            cv::aruco::drawDetectedMarkers(image_out, p2Dss_pixel, ids);
+        }
+
+        if (target_index >= 0)
+        {
+            cv::drawFrameAxes(image_out, cameraMatrix_, distCoeffs_, rvec, tvec, 0.1, 2);
+        }
+
+        // show ===============================================================
+        // resize
+        cv::resize(image_out, image_out, cv::Size(), resize_scale_factor_, resize_scale_factor_, cv::INTER_LINEAR);
+
+        // show
+        cv::imshow("ArUco Tracker", image_out);
+        int key = cv::waitKey(10);
+        if (key == 27)
+        {
+            break; // quit when 'esc' pressed
+        }
+    }
+    std::cout << "END" << std::endl;
+
+    return true;
+}
+
+// ----------------------------------------------------------------------------
+bool ArUco_Detector::run_as_thread()
+{
+    std::cout << "[ArUco Detector] started running as thread." << std::endl;
+    thread_ = std::thread(&ArUco_Detector::run, this);
+
+    return true;
+}
+
 // ----------------------------------------------------------------------------
 bool ArUco_Detector::run_for_data_collection()
 {
