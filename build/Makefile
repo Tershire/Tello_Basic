@@ -117,6 +117,45 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named detect_aruco_for_data_collection
+
+# Build rule for target.
+detect_aruco_for_data_collection: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 detect_aruco_for_data_collection
+.PHONY : detect_aruco_for_data_collection
+
+# fast build rule for target.
+detect_aruco_for_data_collection/fast:
+	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/detect_aruco_for_data_collection.dir/build.make app/CMakeFiles/detect_aruco_for_data_collection.dir/build
+.PHONY : detect_aruco_for_data_collection/fast
+
+#=============================================================================
+# Target rules for targets named read
+
+# Build rule for target.
+read: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 read
+.PHONY : read
+
+# fast build rule for target.
+read/fast:
+	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/read.dir/build.make app/CMakeFiles/read.dir/build
+.PHONY : read/fast
+
+#=============================================================================
+# Target rules for targets named tello_vision_test
+
+# Build rule for target.
+tello_vision_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tello_vision_test
+.PHONY : tello_vision_test
+
+# fast build rule for target.
+tello_vision_test/fast:
+	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/tello_vision_test.dir/build.make app/CMakeFiles/tello_vision_test.dir/build
+.PHONY : tello_vision_test/fast
+
+#=============================================================================
 # Target rules for targets named tello_basic
 
 # Build rule for target.
@@ -137,7 +176,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... detect_aruco_for_data_collection"
+	@echo "... read"
 	@echo "... tello_basic"
+	@echo "... tello_vision_test"
 .PHONY : help
 
 

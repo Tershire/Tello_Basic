@@ -30,3 +30,40 @@
 *.exe
 *.out
 *.app
+bin/
+
+# cmake
+*cmake-build-*
+*.idea
+**build**
+
+# config
+*configuration.yaml
+system_config.yaml
+
+# setting
+*setting.yaml
+
+# python virtual environment
+**venv**
+
+# image
+*.jpg
+*.jpeg
+*.png
+
+# model
+runs/
+*.pt
+*.onnx
+
+# jupyter
+.ipynb_checkpoints
+
+# inference
+*.names
+
+# output_data
+output_data/
+*.csv
+

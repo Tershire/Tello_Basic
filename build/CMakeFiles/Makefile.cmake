@@ -61,5 +61,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "app/CMakeFiles/detect_aruco_for_data_collection.dir/DependInfo.cmake"
+  "app/CMakeFiles/read.dir/DependInfo.cmake"
+  "app/CMakeFiles/tello_vision_test.dir/DependInfo.cmake"
   "src/CMakeFiles/tello_basic.dir/DependInfo.cmake"
   )

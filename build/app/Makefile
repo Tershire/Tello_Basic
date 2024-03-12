@@ -116,6 +116,120 @@ depend:
 	cd /home/tershire/Documents/research/Tello_Basic/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+app/CMakeFiles/detect_aruco_for_data_collection.dir/rule:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/detect_aruco_for_data_collection.dir/rule
+.PHONY : app/CMakeFiles/detect_aruco_for_data_collection.dir/rule
+
+# Convenience name for target.
+detect_aruco_for_data_collection: app/CMakeFiles/detect_aruco_for_data_collection.dir/rule
+.PHONY : detect_aruco_for_data_collection
+
+# fast build rule for target.
+detect_aruco_for_data_collection/fast:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/detect_aruco_for_data_collection.dir/build.make app/CMakeFiles/detect_aruco_for_data_collection.dir/build
+.PHONY : detect_aruco_for_data_collection/fast
+
+# Convenience name for target.
+app/CMakeFiles/read.dir/rule:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/read.dir/rule
+.PHONY : app/CMakeFiles/read.dir/rule
+
+# Convenience name for target.
+read: app/CMakeFiles/read.dir/rule
+.PHONY : read
+
+# fast build rule for target.
+read/fast:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/read.dir/build.make app/CMakeFiles/read.dir/build
+.PHONY : read/fast
+
+# Convenience name for target.
+app/CMakeFiles/tello_vision_test.dir/rule:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/tello_vision_test.dir/rule
+.PHONY : app/CMakeFiles/tello_vision_test.dir/rule
+
+# Convenience name for target.
+tello_vision_test: app/CMakeFiles/tello_vision_test.dir/rule
+.PHONY : tello_vision_test
+
+# fast build rule for target.
+tello_vision_test/fast:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/tello_vision_test.dir/build.make app/CMakeFiles/tello_vision_test.dir/build
+.PHONY : tello_vision_test/fast
+
+detect_aruco_for_data_collection.o: detect_aruco_for_data_collection.cpp.o
+.PHONY : detect_aruco_for_data_collection.o
+
+# target to build an object file
+detect_aruco_for_data_collection.cpp.o:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/detect_aruco_for_data_collection.dir/build.make app/CMakeFiles/detect_aruco_for_data_collection.dir/detect_aruco_for_data_collection.cpp.o
+.PHONY : detect_aruco_for_data_collection.cpp.o
+
+detect_aruco_for_data_collection.i: detect_aruco_for_data_collection.cpp.i
+.PHONY : detect_aruco_for_data_collection.i
+
+# target to preprocess a source file
+detect_aruco_for_data_collection.cpp.i:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/detect_aruco_for_data_collection.dir/build.make app/CMakeFiles/detect_aruco_for_data_collection.dir/detect_aruco_for_data_collection.cpp.i
+.PHONY : detect_aruco_for_data_collection.cpp.i
+
+detect_aruco_for_data_collection.s: detect_aruco_for_data_collection.cpp.s
+.PHONY : detect_aruco_for_data_collection.s
+
+# target to generate assembly for a file
+detect_aruco_for_data_collection.cpp.s:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/detect_aruco_for_data_collection.dir/build.make app/CMakeFiles/detect_aruco_for_data_collection.dir/detect_aruco_for_data_collection.cpp.s
+.PHONY : detect_aruco_for_data_collection.cpp.s
+
+read.o: read.cpp.o
+.PHONY : read.o
+
+# target to build an object file
+read.cpp.o:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/read.dir/build.make app/CMakeFiles/read.dir/read.cpp.o
+.PHONY : read.cpp.o
+
+read.i: read.cpp.i
+.PHONY : read.i
+
+# target to preprocess a source file
+read.cpp.i:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/read.dir/build.make app/CMakeFiles/read.dir/read.cpp.i
+.PHONY : read.cpp.i
+
+read.s: read.cpp.s
+.PHONY : read.s
+
+# target to generate assembly for a file
+read.cpp.s:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/read.dir/build.make app/CMakeFiles/read.dir/read.cpp.s
+.PHONY : read.cpp.s
+
+tello_vision_test.o: tello_vision_test.cpp.o
+.PHONY : tello_vision_test.o
+
+# target to build an object file
+tello_vision_test.cpp.o:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/tello_vision_test.dir/build.make app/CMakeFiles/tello_vision_test.dir/tello_vision_test.cpp.o
+.PHONY : tello_vision_test.cpp.o
+
+tello_vision_test.i: tello_vision_test.cpp.i
+.PHONY : tello_vision_test.i
+
+# target to preprocess a source file
+tello_vision_test.cpp.i:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/tello_vision_test.dir/build.make app/CMakeFiles/tello_vision_test.dir/tello_vision_test.cpp.i
+.PHONY : tello_vision_test.cpp.i
+
+tello_vision_test.s: tello_vision_test.cpp.s
+.PHONY : tello_vision_test.s
+
+# target to generate assembly for a file
+tello_vision_test.cpp.s:
+	cd /home/tershire/Documents/research/Tello_Basic/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/tello_vision_test.dir/build.make app/CMakeFiles/tello_vision_test.dir/tello_vision_test.cpp.s
+.PHONY : tello_vision_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +238,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... detect_aruco_for_data_collection"
+	@echo "... read"
+	@echo "... tello_vision_test"
+	@echo "... detect_aruco_for_data_collection.o"
+	@echo "... detect_aruco_for_data_collection.i"
+	@echo "... detect_aruco_for_data_collection.s"
+	@echo "... read.o"
+	@echo "... read.i"
+	@echo "... read.s"
+	@echo "... tello_vision_test.o"
+	@echo "... tello_vision_test.i"
+	@echo "... tello_vision_test.s"
 .PHONY : help
 
 

@@ -11,10 +11,10 @@ motion_log_on: 1 # 1 for true, 0 for false (if timestamps are not provided, set 
 
 # Input ///////////////////////////////////////////////////////////////////////
 # usb, video, tello
-input_mode: usb
+input_mode: tello
 
 # Setting (camera to use)
-mono_camera_to_use: usb
+mono_camera_to_use: tello
 setting_file_path: ./config/sensor_setting.yaml
 
 # USB Camera

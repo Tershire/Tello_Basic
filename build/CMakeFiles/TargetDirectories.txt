@@ -1,5 +1,8 @@
 /home/tershire/Documents/research/Tello_Basic/build/CMakeFiles/edit_cache.dir
 /home/tershire/Documents/research/Tello_Basic/build/CMakeFiles/rebuild_cache.dir
+/home/tershire/Documents/research/Tello_Basic/build/app/CMakeFiles/detect_aruco_for_data_collection.dir
+/home/tershire/Documents/research/Tello_Basic/build/app/CMakeFiles/read.dir
+/home/tershire/Documents/research/Tello_Basic/build/app/CMakeFiles/tello_vision_test.dir
 /home/tershire/Documents/research/Tello_Basic/build/app/CMakeFiles/edit_cache.dir
 /home/tershire/Documents/research/Tello_Basic/build/app/CMakeFiles/rebuild_cache.dir
 /home/tershire/Documents/research/Tello_Basic/build/src/CMakeFiles/tello_basic.dir
