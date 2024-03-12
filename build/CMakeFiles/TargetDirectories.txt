@@ -1,0 +1,7 @@
+/home/tershire/Documents/research/Tello_Basic/build/CMakeFiles/edit_cache.dir
+/home/tershire/Documents/research/Tello_Basic/build/CMakeFiles/rebuild_cache.dir
+/home/tershire/Documents/research/Tello_Basic/build/app/CMakeFiles/edit_cache.dir
+/home/tershire/Documents/research/Tello_Basic/build/app/CMakeFiles/rebuild_cache.dir
+/home/tershire/Documents/research/Tello_Basic/build/src/CMakeFiles/tello_basic.dir
+/home/tershire/Documents/research/Tello_Basic/build/src/CMakeFiles/edit_cache.dir
+/home/tershire/Documents/research/Tello_Basic/build/src/CMakeFiles/rebuild_cache.dir
